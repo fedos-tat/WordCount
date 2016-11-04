@@ -33,9 +33,9 @@ public class MyFileSystemView extends FileSystemView{
 			  filename = ff.getName();
 			  extension = filename.substring(filename.lastIndexOf(".") + 1, filename.length());
 	          if(!extension.equals("zip")) {
- 			     System.out.println("FilesAndDirs files ="+ ff);
+ 			    // System.out.println("FilesAndDirs files ="+ ff);
 				 if(ff.isDirectory()){
-					 System.out.println("dir ="+ ff);
+					// System.out.println("dir ="+ ff);
 					 File [] files_tmp = ff.listFiles();
 					 for(File tmp : files_tmp){
 					   if(tmp.isDirectory()) {count_dir ++;	}  //child dir of level>1
@@ -46,20 +46,21 @@ public class MyFileSystemView extends FileSystemView{
 		  }
 		  //// adding files from 2...n levels child directories 
 		  while(count_dir>0){
+			  ArrayList<File> fileListTmp = new ArrayList<File>();
 			     for(File ff : fileList){
 					filename = ff.getName();
 					extension = filename.substring(filename.lastIndexOf(".") + 1, filename.length());
 			        if(!extension.equals("zip")) {
 				      if(ff.isDirectory()){
 					     File [] files_tmp1 = ff.listFiles();
-					     Collections.addAll(fileList, files_tmp1);
+					     Collections.addAll(fileListTmp, files_tmp1);
 					     count_dir --;
 					     for(File tmp : files_tmp1){
 						   if(tmp.isDirectory()) {count_dir ++;	} 
 					     }   
 				      } 
-			        } else fileList.add(ff);  //add .zip
-				 }
+			        } else fileListTmp.add(ff);  //add .zip
+				 }fileList.addAll(fileListTmp);
 		   }	
 
           fileList.addAll(Arrays.asList(filesAndDirs));

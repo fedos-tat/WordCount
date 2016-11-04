@@ -14,7 +14,7 @@ public class UnZipFile {
 	 	 try {
 
 	 		 String strPath = file.getAbsolutePath();
-System.out.println("ZIP!!!!!!!!!" + file);
+
 	 		 BufferedOutputStream dest = null;
 	         FileInputStream fis = new FileInputStream(file);
 	         ZipInputStream zis = new ZipInputStream(new BufferedInputStream(fis));
