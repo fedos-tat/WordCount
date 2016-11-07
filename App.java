@@ -14,13 +14,15 @@ public class App {
 	public static HashMap<String, Integer> map = new HashMap<String, Integer>();
 	public static StringBuffer fileContent = new StringBuffer();
 	public static CopyOnWriteArrayList<File> fileList = new CopyOnWriteArrayList<File>();
+	//public static String InputParam1;
+	public static String InputParam1;
 	
 	public static void main(String[] args) {
 		App.map.clear();
         App.fileContent.trimToSize();
         App.fileList.clear();
         
-		String InputParam1;
+		  //String InputParam1;
 
 	      Scanner in = new Scanner(System.in);
 	 

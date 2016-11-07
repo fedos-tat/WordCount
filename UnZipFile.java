@@ -32,7 +32,7 @@ public class UnZipFile {
 	            while ((count = zis.read(data, 0, 2048)) 
 	              != -1) {
 	               dest.write(data, 0, count);
-	               System.out.println(count);
+	               //System.out.println(count);
 	            }
 	            dest.flush();
                 // add unzipped file

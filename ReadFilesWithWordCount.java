@@ -15,7 +15,12 @@ public class ReadFilesWithWordCount {
 	
      public static boolean  ReadFilesWithWordCount1(){
     	 boolean result = false;
+    	 int fileCount =0;
+    	 int wordCountPerFile =0;
+    	 int totalWordCountPerDir =0;
     	 for(File ff: App.fileList){
+    	   fileCount ++;
+           wordCountPerFile =0;
     		// System.out.println("Global files ="+ ff);
  		   String strPath1 = ff.getAbsolutePath();
 		   //path1 for BufferReader
@@ -27,6 +32,8 @@ public class ReadFilesWithWordCount {
                 String[] words = line.replaceAll("[^a-zA-Z ]", "").split("\\s+");
                 App.fileContent.append(line).append("\n");
                 for(String word : words){
+                  wordCountPerFile++;
+                  totalWordCountPerDir++;
                   if (App.map.containsKey(word)) App.map.put(word, App.map.get(word)+1);
                   else App.map.put(word, 1);
                 }	  
@@ -36,7 +43,10 @@ public class ReadFilesWithWordCount {
            } catch (IOException x) {
               System.err.format("IOException: %s%n", x);
            }
-		}
+		 //System.out.println("File "+ff+" contains "+wordCountPerFile+" words." );
+    	 }
+    	 System.out.println("Input directory "+ App.InputParam1 + " contains "+fileCount+" files and "+
+    	      totalWordCountPerDir+" words.");
          // Sort keys
     	 TreeMap<String, Integer> sortedByKeyMap= new TreeMap<String, Integer>(App.map);
      	 // store keys(words) separated by ";" to show in "Sorted By Value of occurence in TXT files"
