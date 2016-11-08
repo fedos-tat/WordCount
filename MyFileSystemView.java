@@ -64,7 +64,7 @@ public class MyFileSystemView extends FileSystemView{
 		   }	
 
           fileList.addAll(Arrays.asList(filesAndDirs));
-         // System.out.println("MyFileSys fileList size ="+fileList.size());
+          System.out.println("MyFileSys fileList size ="+fileList.size());
 	      for(File file : fileList) {
 	    	//  System.out.println(file);
 	        if (!file.isDirectory()) {
@@ -72,6 +72,7 @@ public class MyFileSystemView extends FileSystemView{
 	        	extension = filename.substring(filename.lastIndexOf(".") + 1, filename.length());
 	        	if(extension.equals("txt")) 
                 { App.fileList.add(file);}
+	        	
                 if(extension.equals("zip")) 
                   { boolean unZipFileResult = UnZipFile.UnZipFile(file);}
 	        }    
