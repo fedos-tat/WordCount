@@ -44,7 +44,7 @@ public class ReadFilesWithWordCount {
             	
                 for(String word : words){
                   if(word.length()>1 || 
-                     word.length() == 1 && (Character.isLetter(word.charAt(0)) )){
+                     (word.length() == 1 && (Character.isLetter(word.charAt(0))) )){
                         if (App.map.containsKey(word)) App.map.put(word, App.map.get(word)+1);             	  
                         else App.map.put(word, 1);
                         if (mapFile.containsKey(word)) mapFile.put(word, mapFile.get(word)+1);
