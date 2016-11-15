@@ -77,6 +77,8 @@ public class MyFileSystemView extends FileSystemView{
                   { boolean unZipFileResult = UnZipFile.UnZipFile(file);}
 	        }    
 	      }
+	      for(File file: App.fileList){
+	      System.out.println("FILE="+ file);}
          //Local fileList
 	      fileList.clear();
 	      return App.fileList;

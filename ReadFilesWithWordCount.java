@@ -23,10 +23,10 @@ public class ReadFilesWithWordCount {
     	 int wordCountPerFile =0;
     	 int totalWordCountPerDir =0;
     	 int maxMapValue =0;
-    	 HashMap<String, Integer> mapFile = new HashMap<String, Integer>();
+    	// HashMap<String, Integer> mapFile = new HashMap<String, Integer>();
     	 for(File ff: App.fileList){
     	   fileCount ++;
-           
+    	   HashMap<String, Integer> mapFile = new HashMap<String, Integer>();
     		 System.out.println("Global files ="+ ff);
  		   String strPath1 = ff.getAbsolutePath();
 		   //path1 for BufferReader
@@ -110,4 +110,3 @@ public class ReadFilesWithWordCount {
     	 return result; 
      }
 }
-
